@@ -3,6 +3,27 @@ from typing import Union
 import sqlite3 
 from typing import List 
 from pydantic import BaseModel 
+origins = [
+    "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us51.gitpod.io/",
+    "https://8081-katiaolem-apirest2-qwcr8ep7p9d.ws-us51.gitpod.io/"
+    "http://localhost:8080",   #lista de donde se recibiran
+    "http://127.0.0.1:3000", 
+    "*"
+      
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+app = FastAPI()   #objeto
+
+
   
 class Respuesta (BaseModel) : 
      message: str 
@@ -20,6 +41,23 @@ class ClienteID(BaseModel):
 
 app =FastAPI() 
   
+origins = [
+    "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us51.gitpod.io/",
+    "https://8081-katiaolem-apirest2-qwcr8ep7p9d.ws-us51.gitpod.io/"
+    "http://localhost:8080",   #lista de donde se recibiran
+    "http://127.0.0.1:3000", 
+    "*"
+      
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 @app.get("/", response_model=Respuesta) 
 async def index(): 
     return {"message": "API REST"} 

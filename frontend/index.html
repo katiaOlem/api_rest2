@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <header>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tabla Clientes Conectada</title>
+    </header>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 60%;
+        }
+        
+        td, th {
+          border: 3px solid #dddddd;
+          text-align: center;
+          padding: 4px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
+    <body>
+        <center><h1 style="background-color:rgb(235, 152, 229);"> Clientes</h1></center>
+        <script type="text/javascript" src="./get_clientes.js"></script>
+        <center><table id="tabla_clientes">
+
+
+        </table></center>
+
+        <script async>
+            document.body.onload = getClientes();
+        </script>
+    </body>
+</html>
