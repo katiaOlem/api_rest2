@@ -15,7 +15,7 @@ DATABASE_URL = os.path.join("sql/clientes.sqlite")
 
 security = HTTPBasic() 
 
-class Usuarios(BaseModel): 
+class ClienteIN(BaseModel): 
     username: str 
     level: int 
 
@@ -28,11 +28,9 @@ class Cliente (BaseModel):
     email: str  
 
 origins = [
-    "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us51.gitpod.io/",
-    "https://8081-katiaolem-apirest2-qwcr8ep7p9d.ws-us51.gitpod.io/"
-    "http://localhost:8080",   #lista de donde se recibiran
-    "http://127.0.0.1:3000", 
-    "*"
+    "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us53.gitpod.io/",
+    "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us53.gitpod.io/",
+    "https://8080-katiaolem-apirest2-qwcr8ep7p9d.ws-us53.gitpod.io/",
       
 ]
 
