@@ -1,8 +1,9 @@
 function PostCliente(){
-
-
+//#libreria para conectarse con enpoints//
+   
     usernombre  = window.prompt('Usernombre:')
     password    = window.prompt('Password:')
+    //mandar el password y contraseña 
 
     let nombre = document.getElementById("nombre");
     let email  = document.getElementById("email");
@@ -16,7 +17,9 @@ function PostCliente(){
     console.log("email: "  + email.value);
     console.log(payload);
     
-    var request = new XMLHttpRequest();
+    var request = new XMLHttpRequest();   //Accede a la session de la pagina//
+    //url 
+   //asincrona o false sincrona
     request.open('POST', 'https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us53.gitpod.io/clientes/',true);
     request.setRequestHeader("Content-Type", "application/json");
     request.setRequestHeader("Accept", "application/json");

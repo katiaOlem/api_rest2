@@ -27,7 +27,7 @@ class Cliente (BaseModel):
     nombre: str  
     email: str  
 
-class ClienteIN(BaseModel):
+class ClienteIN(BaseModel): #//clienteIN
     nombre: str
     email : str
 

@@ -8,15 +8,39 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     </header>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 60%;
+        }
+        
+        td, th {
+          border: 3px solid #dddddd;
+          text-align: center;
+          padding: 4px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+        </style>
     <body>
-        <h1>Clientes</h1>
-        <script type="text/javascript" src="/static/js/get_clientes.js"></script>
-        <a href="/templates/post_cliente.html">Ingresa un nuevo cliente</a>
+        <center><h1 style="background-color:rgb(235, 152, 229);"> Clientes</h1></center>
+        <script type="text/javascript" src="./static/js/get_clientes.js"></script>
+        <center><table id_cliente="tabla_clientes">
+
+
+        </table></center>
+    <body>
 
         <table class="table" id="tabla_clientes">
 
         </table>
-
+        <center>
+        <script type="text/javascript" src="/static/js/get_clientes.js"></script>
+        <a class =" btn " href="/templates/post_cliente.html"> Ingresa un nuevo cliente</a>
+        </center>
         <script async>
             document.body.onload = getClientes();
         </script>

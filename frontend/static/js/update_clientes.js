@@ -1,8 +1,10 @@
-function UpdateCliente(){
-
+function PutCliente(){
+//#libreria para conectarse con enpoints//
+    //Accede a la session de la pagina//
     var request = new XMLHttpRequest();
     usernombre = window.prompt('Usernombre:')
     password = window.prompt('Password:')
+     //mandar el password y contraseña//
 
     var id_cliente = window.location.search.substring(1);
     
@@ -21,7 +23,8 @@ function UpdateCliente(){
     console.log("email: "  + email.value);
     console.log(payload);
     
-    
+     //url 
+    //asincrona o false sincrona
     request.open('PUT', "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us53.gitpod.io/clientes/" ,true);
     request.setRequestHeader("Accept", "application/json");
 

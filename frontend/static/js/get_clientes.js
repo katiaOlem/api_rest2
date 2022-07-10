@@ -1,19 +1,24 @@
 function getClientes() {
-
+//#libreria para conectarse con enpoints//
     var request = new XMLHttpRequest();
+     //Accede a la session de la pagina
     usernombre = window.prompt('Usernombre:')
     password = window.prompt('Password:')
+    //mandar el password y contraseña
 
+
+    //url 
+   //asincrona o false sincrona
     request.open('GET', "https://8000-katiaolem-apirest2-qwcr8ep7p9d.ws-us53.gitpod.io/clientes/");
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("Authorization", "Basic " + btoa(usernombre + ":" + password))
     request.setRequestHeader("content-type", "application/json");
     
-    const  tabla   = document.getElementById("tabla_clientes");
+    const  tabla   = document.getElementById("tabla_clientes"); //donde vamos a estra trabajando///
 
-    var tblBody = document.createElement("tbody");
+    var tblBody = document.createElement("tbody");//creación de elementos//
     var tblHead = document.createElement("thead");
-
+     //valores 
     tblHead.innerHTML = `
         <tr>
             <th>Detalle</th>
@@ -35,6 +40,7 @@ function getClientes() {
         else if (request.status == 202){
             const response = request.responseText;
             const json = JSON.parse(response);
+            ///poner limite de los datos
             for (let i = 0; i < json.length; i++) {
                 var tr          = document.createElement('tr');
                 var detalle     = document.createElement('td');
@@ -43,7 +49,7 @@ function getClientes() {
                 var id_cliente  = document.createElement('td');
                 var nombre      = document.createElement('td');
                 var email       = document.createElement('td');
-
+///lo que deseas hacer agragar, eliminar, borrar
                 detalle.innerHTML       = "<a href='/templates/get_cliente.html?"+json[i].id_cliente+"'>Detalle</a";
                 actualizar.innerHTML    = "<a href='/templates/update_clientes.html?"+json[i].id_cliente+"'>Actualizar</a";
                 borrar.innerHTML        = "<a href='/templates/delete_clientes.html?"+json[i].id_cliente+"'>Borrar</a";
